@@ -1,0 +1,10 @@
+const express = require("express")
+const createAddress = require("../controllers/createAddress")
+const { authMiddleware } = require("../middleware/auth")
+const getAddress = require("../controllers/getAddress")
+const deleteAddress = require("../controllers/deleteAddress")
+const addressRouter = express.Router()
+addressRouter.post('/createAddress',authMiddleware,createAddress)
+addressRouter.get('/getAddress',authMiddleware,getAddress)
+addressRouter.delete('/deleteAddress/:id',authMiddleware,deleteAddress)
+module.exports = addressRouter
