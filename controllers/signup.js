@@ -10,7 +10,9 @@ async function signup(req,res){
         if(response.success){
             let userExists =await userModel.findOne({email:email})
             if(userExists){
-                return res.status(404).send("Email already exists")
+                return res.status(404).json({
+                    message : "Email already Exists!"
+                })
             }
             let user = await userModel.create({
                 firstName,lastName,email,password
@@ -25,10 +27,14 @@ async function signup(req,res){
                 token
             })
         }else{
-            res.status(404).send("Error")
+            res.status(404).json({
+                message : response.error.errors[0].message
+            })
         }
     }catch(e){
-        return res.status(404).send("Invalid inputs")
+        return res.status(404).json({
+            message : "Something Broke"
+        })
     }
    
 
