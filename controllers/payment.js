@@ -5,8 +5,8 @@ async function orderCheckout(req,res){
     try{
         const amount = req.body.totalPrice
         const razorpay = new Razorpay({
-            key_id: 'rzp_test_NB2FBWcDYK84Ek',
-            key_secret: 'BLMNCbrtnSRrOmJJtZDuA7xz'
+            key_id: 'rzp_test_REKOh21e8dZ9Dh',
+            key_secret: 'JZT75ylKWQzSyDfYH5VPlZb7'
         })
     
         const options = {
