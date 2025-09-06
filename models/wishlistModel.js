@@ -4,11 +4,7 @@ const schema = new mongoose.Schema({
 
     id: {
         type : String,
-<<<<<<< HEAD
         required : true
-=======
-
->>>>>>> 7f75b4158d612a3d2687c9aeaf0d5f8997742216
     },
     price : {
         type : Object,
